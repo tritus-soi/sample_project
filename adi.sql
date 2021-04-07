@@ -33,7 +33,7 @@ AGREEMENT_NO INT(15) NOT NULL,
  PRIMARY KEY (AGREEMENT_NO)
  );
 
-- - ใส่ข้อมูลที่เกี่ยวข้อง
+-- ใส่ข้อมูลที่เกี่ยวข้อง
 INSERT INTO TB_DATA_JUDETYPE(AGREEMENT_NO, JUDGE_TYPE)
 VALUES
 (061000020000929, 1),
@@ -51,7 +51,7 @@ AGREEMENT_NO INT(15) NOT NULL,
  PRIMARY KEY (AGREEMENT_NO)
  );
 
-- - ใส่ข้อมูลที่เกี่ยวข้อง
+-- ใส่ข้อมูลที่เกี่ยวข้อง
 INSERT INTO TB_CAR_CASE(AGREEMENT_NO, CAR_CASE_DESC)
 VALUES
 (061000020002909, 'รถที่เป็นซาก'),
@@ -61,7 +61,7 @@ VALUES
 (061000020007220, 'รถเคลมประกัน')
 ;
 
-/* 1.ให้ทา การแบ่งกลุ่มสา หรับการติดตามทวงถามหนี้(30 คะแนน)
+/* 1.ให้ทำการแบ่งกลุ่มสำหรับการติดตามทวงถามหนี้ (30 คะแนน)
 โดยแสดงข้อมูลดังนี้ Agreement_no, Outstanding_Balance, Judge_Type, Group, Age_Of_WO,
 Auto_Type_Name
 มีเงื่อนไขการแบ่งกลุ่มดังนี้
@@ -94,10 +94,10 @@ JOIN TB_DATA_JUDETYPE AS JUDE
 ON WO.AGREEMENT_NO = JUDE.AGREEMENT_NO
 ;
 
-/*ข้อ 2 .ให้ท าการค านวณผลรวม การจ่าย Incentive ให้กับแต่ละผู้ติดตามทวงถามหนีแ้ ตล่ ะกลุ่ม (50 คะแนน)
+/*ข้อ 2 .ให้ทำการคำนวณผลรวมการจ่าย Incentive ให้กับแต่ละผู้ติดตามทวงถามหนี้แต่ละกลุ่ม (50 คะแนน)
 โดยแสดงข้อมูลดังนี้ Collector_Code, Agreement_no, Outstanding_Balance, Judge_Type,
-Group, Age_Of_WO, Auto_Type_Name, Incentive มีเงื่อนไขการจ่าย Incentive กรณีที่ท าการยึดรถ (สถานะของ
-การยึดรถเป็น “W”) */
+Group, Age_Of_WO, Auto_Type_Name, Incentive มีเงื่อนไขการจ่าย Incentive กรณีที่ทำการยึดรถ
+(สถานะของการยึดรถเป็น “W”) */
 
 
 SELECT
@@ -161,7 +161,7 @@ JOIN TB_DATA_JUDETYPE AS JUDE
 ON WO.AGREEMENT_NO = JUDE.AGREEMENT_NO
 ;
 
-/*3.ให้ทำการหาผู้ที่ได้รับเงนิค่า Incentive มากที่สุดในแต่ละกลุ่ม (20 คะแนน)
+/*3.ให้ทำการหาผู้ที่ได้รับเงินค่า Incentive มากที่สุดในแต่ละกลุ่ม (20 คะแนน)
 โดยแสดงข้อมูลดังนี้ Group, Collector_Code, Incentive
 */
 
